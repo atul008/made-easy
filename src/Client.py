@@ -1,3 +1,7 @@
+"""
+ * @author Atul Kumar , Date : 08/07/18
+
+"""
 import requests
 from flask import current_app
 from Constant import BU
@@ -24,6 +28,7 @@ class Tracer:
 
     @staticmethod
     def get_row(row_key, bu):
+        current_app.logger.info("Waiting for Tracer ...")
         status_code, data = HttpClient.get(BU[bu].tracer_url + row_key)
         return data
 
